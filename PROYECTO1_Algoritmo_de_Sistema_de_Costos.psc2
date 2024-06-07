@@ -1,0 +1,47 @@
+Algoritmo Sistema_de_Costos
+	//Definiendo Las Variables
+	Definir PrecioNeto Como Real
+	Definir DescuentoCupon Como Real
+	Definir DescuentoXcantidad Como Real
+	Definir Impuesto Como Real
+	Definir PrecioBruto Como Real
+	Definir Respuesta Como Caracter
+	Definir CantidadProductos Como Entero
+	Definir CostoFijo Como Entero
+	Definir PesoProducto Como Entero
+	Definir CostoEnvio Como Entero
+	Definir PrecioNetoTotal Como Real
+	//Asignando Valores inicial a las constantes Fijas
+	DescuentoXcantidad =0.05
+	Impuesto =0.12
+	DescuentoCupon =0.1
+	CostoFijo =10
+	PesoProducto =3
+	CostoEnvio =2
+	
+	//Inicio del sistema
+	Escribir "Ingreso al sistema de costos"
+	Escribir "Ingrese el valor del producto :" Sin Saltar
+	Leer PrecioBruto
+
+	PrecioBruto=PrecioBruto-(PrecioBruto*DescuentoCupon)
+	Escribir "Valor del Producto con el Descuento del Cupon :" PrecioBruto
+	
+	PrecioNeto=PrecioBruto+(PrecioBruto*Impuesto)
+	Escribir "Valor del Producto con el Impuesto :" PrecioNeto
+	
+	Escribir "Ingrese cantidad de productos a llevar :" Sin Saltar
+	Leer CantidadProductos	
+	
+	Si CantidadProductos=2 Entonces
+		PrecioNeto=PrecioNeto-(PrecioNeto*DescuentoXcantidad)
+		Escribir "Valor del Producto con el Descuento por Cantidad :" PrecioNeto		
+	FinSi	
+
+	CostoEnvio=CostoFijo+(PesoProducto*CostoEnvio)
+	Escribir "El costo de envio del productos es :" CostoEnvio
+	
+	PrecioNetoTotal=(PrecioNeto*CantidadProductos)+CostoEnvio
+	Escribir "Costo final del Producto :" PrecioNetoTotal
+	
+FinAlgoritmo
